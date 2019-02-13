@@ -47,7 +47,7 @@ node('slaves'){
  
  stage('Deploy into Tomcat Server'){
       
-     sh 'echo "Deploymnet started"'
+     sh 'echo "Deploymnet started WARIS"'
      sh 'cp $WORKSPACE/target/*.war /Users/bhaskarreddyl/BhaskarReddyL/Softwares/Running/apache-tomcat-9.0.14/mithunapps/'
      sh 'echo "deployment over"'
       
