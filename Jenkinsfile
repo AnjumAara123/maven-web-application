@@ -49,7 +49,7 @@ node('slaves'){
       
      sh 'echo "Deploymnet started SYED MD WARIS"'
      sh 'cp $WORKSPACE/target/*.war /Users/bhaskarreddyl/BhaskarReddyL/Softwares/Running/apache-tomcat-9.0.14/mithunapps/'
-     sh 'echo "deployment over SYED WARIS"'
+     sh 'echo "deployment over SYED MD WARIS"'
       
         
     }
