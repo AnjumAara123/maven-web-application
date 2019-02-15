@@ -4,7 +4,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 node('master'){
    cleanWs notFailBuild: true
-    /*
+   
  stage('Chekout the code')   {
     git branch: 'development', credentialsId: '7f781337-4f99-4b42-84c9-e504246c0426', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git' 
  }
@@ -27,7 +27,7 @@ node('master'){
      }
  }
  
-  stage('SonarQube Report'){
+ /* stage('SonarQube Report'){
      if(isUnix()){
       sh 'mvn sonar:sonar'
      }
