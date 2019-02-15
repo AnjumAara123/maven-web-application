@@ -6,7 +6,7 @@ node('master'){
    cleanWs notFailBuild: true
    
  stage('Chekout the code')   {
-    git branch: 'development', credentialsId: '7f781337-4f99-4b42-84c9-e504246c0426', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git' 
+    git branch: 'development', credentialsId: '21c9fb87-4015-488a-a873-9959bd89a226', url: 'https://github.com/syedmdwaris/maven-web-application.git' 
  }
  
  
