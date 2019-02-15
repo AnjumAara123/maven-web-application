@@ -19,7 +19,7 @@ node{
         }
     }
     
-     /*
+    
     stage('Create Package')
     {
       if(isUnix()){
@@ -29,7 +29,7 @@ node{
            bat  'mvn clean package' 
         }
     }
-    
+      /*
     stage('SonarQube Report')
     {
       if(isUnix()){
@@ -56,7 +56,7 @@ node{
       sh  'echo App deployed successfully'
 
     }
-    */
+    
     stage('Send Notifications')
     {
         
@@ -65,6 +65,6 @@ Regards,
 Mithun Technologies.
 ''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Done', to: 'devopstrainingblr@gmail.com'
   
-    }
+    } */
     
 }
