@@ -47,17 +47,17 @@ node{
         else{
            bat  'mvn deploy' 
         }
-    }
+    } */
     
     stage('Deploy app into Tomcat Server')
     {
       sh 'echo "App Deploymemt started"'  
-      sh  'cp $WORKSPACE/target/*.war  /Users/mithunreddy/MithunTechnologies/Softwares/Running/apache-tomcat-9.0.13/webapps/'
+      sh  'cp $WORKSPACE/target/*.war  /opt/apache-tomcat-9.0.14/webapps/'
       sh  'echo App deployed successfully'
 
     }
     
-    stage('Send Notifications')
+   /* stage('Send Notifications')
     {
         
       mail bcc: 'devopstrainingblr@gmail.com', body: '''Build Done.
