@@ -44,7 +44,7 @@ node('master'){
         bat 'mvn deploy' 
      }
  }
- 
+ */
  stage('Deploy into Tomcat Server'){
       
      sh 'echo "Deploymnet started SYED WARIS"'
@@ -54,7 +54,7 @@ node('master'){
         
     }
     
-    stage('Notification'){
+   /* stage('Notification'){
       mail bcc: 'devopstrainingblr@gmail.com', body: '''Buid Done
 
 Regards,
