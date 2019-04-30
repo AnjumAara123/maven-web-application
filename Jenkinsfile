@@ -48,7 +48,7 @@ node('master'){
  stage('Deploy into Tomcat Server'){
       
      sh 'echo "Deploymnet started SYED WARIS"'
-     sh 'cp $WORKSPACE/target/*.war /Users/bhaskarreddyl/BhaskarReddyL/Softwares/Running/apache-tomcat-9.0.14/mithunapps/'
+     sh 'cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.14/webapps/'
      sh 'echo "deployment over SYED MD WARIS"'
       
         
