@@ -88,13 +88,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://localhost:8081/repository/war-release/</url>
+	      <name>Releases Nexus Repository</name>
+	      <url>http://13.233.160.55:8081/repository/Maven-Release/</url>/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://localhost:8081/repository/war-snap/</url>
+	      <name>Snapshot Nexus Repository </name>
+	      <url>http://13.233.160.55:8081/repository/Maven-Snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
