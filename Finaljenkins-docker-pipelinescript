@@ -1,0 +1,39 @@
+node{
+    stage('SCM checkout'){
+        git branch: 'development', url: 'https://github.com/syedmdwaris/maven-web-application.git'
+    }
+    stage('Build package'){
+        sh 'mvn clean package -DskipTests'
+    }
+    /*stage('upload artifacts'){
+        sh 'mvn deploy'
+    }
+    stage('Deploy in tomcat server'){
+        sh 'echo "Deploying package in tomcat application server"'
+        sh 'cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.26/webapps'
+    }
+    stage('To check docker version'){
+        sh 'docker --version'
+    }*/
+    stage('Building docker image'){
+        sh 'docker build -t docconwaris/maven-web-application .'
+    }
+    stage('pushing image to docker hub'){
+        withCredentials([string(credentialsId: 'Dockerhub_pwd', variable: 'Dockerhub_pwd')]) {
+        sh "docker login -u docconwaris -p ${Dockerhub_pwd}"
+}
+        sh 'docker push docconwaris/maven-web-application'
+    }
+    stage('Run Docker Image In Dev Server'){
+        
+        def dockerRun = ' docker run  -d -p 8080:8080 --name maven-web-app docconwaris/maven-web-application'
+         
+         sshagent(['Docker_Server']) {
+
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.12.137 docker stop maven-web-app || true'
+          sh 'ssh  ubuntu@172.31.12.137 docker rm maven-web-app || true'
+          sh 'ssh  ubuntu@172.31.12.137 docker rmi -f  $(docker images -q) || true'
+          sh "ssh  ubuntu@172.31.12.137 ${dockerRun}"
+         }
+       }
+}
